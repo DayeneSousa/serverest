@@ -26,11 +26,7 @@ describe('API - Teste Funcional de login', () => {
 
 
 
-
-
-
-
-
+// Teste de login inválido
 
 
 it(`Deve informar mensagem de validação `, () =>{
