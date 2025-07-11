@@ -1,9 +1,6 @@
 
 
 
-
-
-
 describe('Cadastrar produtos', () => {
     it(`Deve Cadastrar produtos com sucesso`, () =>{
         cy.request({
