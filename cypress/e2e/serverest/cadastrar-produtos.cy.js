@@ -1,3 +1,7 @@
+const { faker } = require("@faker-js/faker");
+
+ 
+
 describe('API - Teste Funcional de login', () => {
     it(`Deve realizar o login com sucesso`, () =>{
         cy.request({
@@ -23,8 +27,14 @@ describe('API - Teste Funcional de login', () => {
 
 
     it(`Deve Cadastrar produtos com sucesso`, () =>{
-        cy.fixture('cadastrar-produto.json').then((json) => {
-        cy.request({
+             cy.fixture('cadastrar-produto.json').then((json) => {
+        
+                json.nome = (faker.commerce.productName())
+                json.preco =Number(faker.number.int({ min: 10, max: 500 }))
+                json.descricao = (faker.commerce.productDescription())
+                json.quantidade = (faker.number.int({ min: 1, max: 100 }))
+
+            cy.request({
             failOnStatusCode: false,
             method: 'POST',
             url: 'http://localhost:3000/produtos',
@@ -38,6 +48,7 @@ describe('API - Teste Funcional de login', () => {
 
     }).then((response) => {
         expect(response.status).to.equal(201)
+        cy.log(json.nome)
     })
 })
 })
