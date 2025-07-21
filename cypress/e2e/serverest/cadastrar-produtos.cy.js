@@ -1,5 +1,7 @@
 const { faker } = require("@faker-js/faker");
 
+
+
  
 
 describe('API - Teste Funcional de login', () => {
@@ -48,6 +50,7 @@ describe('API - Teste Funcional de login', () => {
 
     }).then((response) => {
         expect(response.status).to.equal(201)
+        expect(response.body).to.be.jsonSchema(produtoschema);
         cy.log(json.nome)
     })
 })

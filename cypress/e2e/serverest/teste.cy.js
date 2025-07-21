@@ -55,11 +55,4 @@ describe('API - Teste Funcional de login', () => {
 })
 
 
-it('Deve gerar 5 produtos diferentes', () => {
-  for (let i = 0; i < 5; i++) {
-    const nome = faker.commerce.productName();
-    const preco = faker.number.int({ min: 50, max: 300 });
 
-    cy.log(`Produto ${i + 1}: ${nome} - R$ ${preco}`);
-  }
-});
