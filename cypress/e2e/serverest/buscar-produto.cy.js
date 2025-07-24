@@ -30,7 +30,8 @@ describe('Consultar produtos', () => {
 
 
 it('Deve gerar um novo resultado na quandidade', () => {
-   const quantidade = Cypress.env('quantidade');
+
+    const quantidade = Cypress.env('quantidade');
    const numeroGerado = (faker.number.int({ min: quantidade + 1, max: quantidade + 1 }));
    cy.log(numeroGerado);
    
